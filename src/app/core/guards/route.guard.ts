@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '@app/core/services';
 
+@Injectable()
 export class AppRouteGuard implements CanActivate {
     constructor(private service: AuthService, private router: Router) { }
 

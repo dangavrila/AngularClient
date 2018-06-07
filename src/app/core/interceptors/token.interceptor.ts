@@ -11,6 +11,7 @@ import { AuthService } from '@app/core/services';
 import { Observable } from 'rxjs/Observable';
 import { tap } from 'rxjs/operators';
 
+@Injectable()
 export class TokenInterceptor implements HttpInterceptor {
     constructor(private service: AuthService) { }
 

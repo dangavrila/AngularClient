@@ -3,10 +3,11 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { AppHomeComponent } from './home/home.component';
 import { AppLoginComponent } from './login/login.component';
-import { PagesRoutingModule } from './pages.router';
 import { AppAboutComponent } from './about/about.component';
 import { AppContactComponent } from './contact/contact.component';
 import { AppNotFoundComponent } from './not-found/not-found.component';
+import { PagesRoutingModule } from './pages.router';
+import { AppSharedModule } from '@app/shared';
 
 @NgModule({
     declarations: [
@@ -17,6 +18,7 @@ import { AppNotFoundComponent } from './not-found/not-found.component';
         AppNotFoundComponent
     ],
     imports: [
+        AppSharedModule,
         PagesRoutingModule
     ]
 })

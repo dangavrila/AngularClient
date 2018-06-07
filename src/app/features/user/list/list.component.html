@@ -5,7 +5,8 @@
         Users
       </mat-card-subtitle>
       <mat-card-content>
-        <mat-paginator (page)="changePage($event)" [pageIndex]='page' [length]="total" [pageSize]="rows" [pageSizeOptions]="[5, 10, 25, 100]" />
+        <mat-paginator (page)="changePage($event)" [pageIndex]='page' [length]="total" [pageSize]="rows" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
         <mat-table [dataSource]='dataSource'>
           <ng-container *ngFor="let column of columnDefs">
             <ng-container matColumnDef="{{column.property}}">
@@ -23,6 +24,9 @@
             </ng-container>
           </ng-container>
         </mat-table>
+        <mat-paginator (page)="changePage($event)" [pageIndex]='page' [length]="total" [pageSize]="rows" [pageSizeOptions]="[5, 10, 25, 100]">
+        </mat-paginator>
       </mat-card-content>
+    </mat-card>
   </div>
 </app-loading-spinner>
