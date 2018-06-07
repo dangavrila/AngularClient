@@ -1,10 +1,10 @@
 <!--Header-->
-<app-header></app-header>
+<app-header (onLogin)='logLogin($event)' [links]='menuLinks'></app-header>
 
 <div class="container-fluid main-content">
-  <div class="row">
-    <router-outlet></router-outlet>>
-  </div>
+    <router-outlet>
+
+    </router-outlet>>
 </div>
 
 <!--footer-->

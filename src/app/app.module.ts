@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/layout.module';
 import { AppPagesModule } from './features/pages/pages.module';
 import { AppCoreModule } from '@app/core';
+import { UserModule } from '@app/features/user/user.module';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AppCoreModule } from '@app/core';
 
     // Feature Module
     AppLayoutModule,
-    AppPagesModule
+    AppPagesModule,
+    UserModule
   ],
   bootstrap: [AppComponent]
 })
