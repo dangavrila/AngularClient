@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MenuLinkItem } from '@app/models';
+import { AuthService } from '@app/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppHeaderComponent implements OnInit {
 
-  constructor() { }
+  @Input()
+  links: Array<MenuLinkItem>;
+
+  constructor(public service: AuthService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.service.logout();
+    this.router.navigateByUrl('login');
   }
 
 }
