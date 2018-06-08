@@ -1,0 +1,11 @@
+<mat-error class="row">
+  <mat-card class="col-md-6 offset-md-3 col-lg-4 offset-lg-4 col-xs-12">
+    <mat-card-subtitle>Edit User</mat-card-subtitle>
+    <mat-card-content>
+      <app-user-form [user]='user' (saveEvent)='save($event)' (cancelEvent)='cancel()'></app-user-form>
+      <div *ngIf="message">
+        {{message}}
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-error>

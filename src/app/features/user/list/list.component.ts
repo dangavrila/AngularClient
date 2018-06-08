@@ -26,7 +26,7 @@ export class ListUsersComponent extends HasLoadingSpinnerBase implements OnInit 
   page = 0;
   rows = 10;
 
-  constructor(private service: UserService, private route: ActivatedRoute) {
+  constructor(private service: UserService, private route: ActivatedRoute, private dialog: MatDialog) {
     super();
   }
 
@@ -47,6 +47,22 @@ export class ListUsersComponent extends HasLoadingSpinnerBase implements OnInit 
       .subscribe((response: UserResponse) => {
         this.updateDataSource(response);
       });
+  }
+
+  delete(user: User) {
+    this.dialog.open(ModalConfirmationComponent, {
+      width: '400px',
+      height: '200px',
+      data: user
+    }).afterClosed()
+    .subscribe(response => {
+      if (response) {
+        this.service.delete(user)
+        .subscribe(() => {
+          this.ngOnInit();
+        }, console.error);
+      }
+    });
   }
 
   private setColumns() {

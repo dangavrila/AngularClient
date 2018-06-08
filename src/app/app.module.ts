@@ -6,9 +6,8 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { AppLayoutModule } from './layout/layout.module';
-import { AppPagesModule } from './features/pages/pages.module';
+import { AppPagesModule, UserModule } from '@app/features';
 import { AppCoreModule } from '@app/core';
-import { UserModule } from '@app/features/user/user.module';
 
 @NgModule({
   declarations: [

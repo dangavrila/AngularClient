@@ -1,10 +1,19 @@
 <!--Header-->
 <app-header (onLogin)='logLogin($event)' [links]='menuLinks'></app-header>
 
-<div class="container-fluid main-content">
+<mat-card>
+    <mat-card-title>
+        {{pageName}}
+    </mat-card-title>
+</mat-card>
+<div #content class="container-fluid main-content" (scroll)='onScroll($event)'>
     <router-outlet>
 
-    </router-outlet>>
+    </router-outlet>
+
+    <button (click)='scrollToTop()' class="back-to-top-button" mat-fab [@scrollButton]="canScrollToTop ? 'scrollable': ''">
+        <i class="fa fa-arrow-up"></i>
+    </button>
 </div>
 
 <!--footer-->
