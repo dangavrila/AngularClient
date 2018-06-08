@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { menuLinks } from './menu-links';
 import { MenuLinkItem } from '@app/models/MenuLinks';
+import { ScreenService } from '@app/core/services';
 import { ActivatedRoute } from '@angular/router';
 import { state, style, transition, animate, trigger } from '@angular/animations';
 
@@ -20,7 +21,7 @@ import { state, style, transition, animate, trigger } from '@angular/animations'
 })
 export class AppLayoutComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) {
+  constructor(public service: ScreenService, private route: ActivatedRoute) {
     this.route.data.subscribe((data) => {
       this.pageName = data.pageName;
     });
@@ -33,6 +34,11 @@ export class AppLayoutComponent implements OnInit {
 
   menuLinks: Array<MenuLinkItem>;
   canScrollToTop = false;
+
+  @HostListener('window:resize', ['$event.target.innerWidth'])
+  onWindowResize(width: number) {
+    this.service.setType(width);
+  }
 
   scrollToTop() {
     this.content.nativeElement
