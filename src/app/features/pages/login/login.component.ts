@@ -25,8 +25,7 @@ export class AppLoginComponent implements OnInit {
       });
   }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
   getIsRequired(element) {
     return element.errors && element.errors.required;
@@ -43,5 +42,4 @@ export class AppLoginComponent implements OnInit {
   logMe(me) {
     console.log(me);
   }
-
 }

@@ -1,4 +1,4 @@
-import { MenuLinkItem } from '@app/models/MenuLinks';
+import { MenuLinkItem } from '@app/models/MenuLink';
 
 export const menuLinks: Array<MenuLinkItem> = [
     {

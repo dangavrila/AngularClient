@@ -14,10 +14,10 @@ export class UserFormComponent implements OnInit {
   user: User;
 
   @Output()
-  saveEvent: EventEmitter<User> = new EventEmitter();
+  onSave: EventEmitter<User> = new EventEmitter();
 
   @Output()
-  cancelEvent: EventEmitter<void> = new EventEmitter();
+  onCancel: EventEmitter<void> = new EventEmitter();
 
   ngOnInit() {
     if (!this.user) {
@@ -26,15 +26,14 @@ export class UserFormComponent implements OnInit {
   }
 
   save() {
-    this.saveEvent.emit(this.user);
+    this.onSave.emit(this.user);
   }
 
   cancel() {
-    this.cancelEvent.emit();
+    this.onCancel.emit();
   }
 
   checkPassword(password, confirm) {
     return password.value === confirm.value;
   }
-
 }

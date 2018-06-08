@@ -1,4 +1,4 @@
 export * from './Credentials';
-export * from './MenuLinks';
-export * from './BaseResponse';
+export * from './MenuLink';
 export * from './User';
+export * from './BaseResponse';

@@ -1,11 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms' ;
-import { MatFormFieldModule, MatInputModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { AppLayoutModule } from './layout/layout.module';
+import { AppLayoutModule } from '@app/layout';
 import { AppPagesModule, UserModule } from '@app/features';
 import { AppCoreModule } from '@app/core';
 
@@ -23,8 +21,8 @@ import { AppCoreModule } from '@app/core';
 
     // Feature Module
     AppLayoutModule,
-    AppPagesModule,
-    UserModule
+    UserModule,
+    AppPagesModule
   ],
   bootstrap: [AppComponent]
 })

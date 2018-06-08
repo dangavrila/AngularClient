@@ -1,6 +1,6 @@
 import { Component, OnInit, HostListener, ViewChild, ElementRef } from '@angular/core';
 import { menuLinks } from './menu-links';
-import { MenuLinkItem } from '@app/models/MenuLinks';
+import { MenuLinkItem } from '@app/models/MenuLink';
 import { ScreenService } from '@app/core/services';
 import { ActivatedRoute } from '@angular/router';
 import { state, style, transition, animate, trigger } from '@angular/animations';

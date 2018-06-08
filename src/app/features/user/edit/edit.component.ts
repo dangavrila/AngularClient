@@ -10,17 +10,20 @@ import { UserService } from '@app/core';
 })
 export class EditUserComponent implements OnInit {
 
-  user: User;
-  message: string;
-
-  constructor(private service: UserService, private route: ActivatedRoute, private router: Router) {
+  constructor(
+    private route: ActivatedRoute,
+    private router: Router,
+    private service: UserService
+  ) {
     this.route.params.subscribe((params) => {
       this.getUser(parseInt(params.id, 10));
     });
   }
 
-  ngOnInit() {
-  }
+  user: User;
+  message: string;
+
+  ngOnInit() { }
 
   save(user: User) {
     this.service.update(user).subscribe(
@@ -33,6 +36,10 @@ export class EditUserComponent implements OnInit {
     );
   }
 
+  cancel() {
+    this.redirectToList();
+  }
+
   private redirectToList() {
     this.router.navigateByUrl('user');
   }
@@ -42,9 +49,4 @@ export class EditUserComponent implements OnInit {
       this.user = response;
     }, console.error);
   }
-
-  cancel() {
-    this.redirectToList();
-  }
-
 }
