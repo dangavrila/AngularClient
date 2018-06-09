@@ -14,7 +14,7 @@ export class ApiInterceptor implements HttpInterceptor {
 
   constructor() { }
 
-  private BACKEND_URL = 'http://localhost:3000';
+  private BACKEND_URL = 'http://localhost:50073';
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     const requestUrl = req.url.startsWith('/')
