@@ -65,6 +65,13 @@ export class ListUsersComponent extends HasLoadingSpinnerBase implements OnInit 
     });
   }
 
+  edit(user: User) {
+    this.service.update(user)
+      .subscribe(() => {
+        this.ngOnInit();
+      }, console.error);
+  }
+
   private setColumns() {
     this.columnDefs = COLUMNS.slice();
     this.columns = [];
