@@ -22,6 +22,6 @@ export class BaseHttpService<TResponse extends BaseResponse> {
     }
 
     delete(entity: BaseEntity): Observable<any> {
-        return this.client.delete(`${this.url}/${entity.id}`);
+        return this.client.delete(`${this.url}?id=${entity.id}`);
     }
 }
