@@ -9,9 +9,9 @@ import { NewUserComponent } from '@app/features/user/new/new.component';
 @NgModule({
     declarations: [
         ListUsersComponent,
+        NewUserComponent,
         EditUserComponent,
-        UserFormComponent,
-        NewUserComponent
+        UserFormComponent
     ],
     providers: [],
     imports: [
